@@ -16,16 +16,16 @@ then
     git pull --rebase;
     LAST_BRANCH="origin/dev";
     LAST_COMMIT=$(git rev-parse HEAD);
-fi
-
-if [ $BRANCH == "master" ]
+elif [ $BRANCH == "master" ]
 then
-	echo "in branch master";
+  echo "in branch master";
     git checkout master;
     git pull --rebase;
     LAST_BRANCH="origin/master";
     LAST_COMMIT=$(git rev-parse HEAD);
+else echo ""error
 fi
+
 
 echo $LAST_COMMIT;
 echo $LAST_BRANCH;
